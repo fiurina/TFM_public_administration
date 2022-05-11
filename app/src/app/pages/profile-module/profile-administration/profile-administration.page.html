@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="header">
+    <p class="title-cmp">Perfil de usuario</p>
+  </div>
+  <div class="wrapper">
+    <div class="balance">
+      <p>Balance de cuenta: {{(balance/10000000000000000000).toFixed(6)}} ETH</p>
+    </div>   
+    
+    <ion-item class="input-item" [disabled]="loading || !edit">
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="string" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading || !edit">
+      <ion-label position="stacked">Surname</ion-label>
+      <ion-input type="string" [(ngModel)]="surname"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading || !edit">
+      <ion-label position="stacked">DNI</ion-label>
+      <ion-input type="string" [(ngModel)]="dni"></ion-input>
+    </ion-item>
+
+    <p class="delete" (click)="deleteAccount()">Eliminar cuenta</p>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="save()" [disabled]="loading">
+      <ion-icon name="save-outline" *ngIf="edit"></ion-icon>
+      <ion-icon name="pencil-outline" *ngIf="!edit"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

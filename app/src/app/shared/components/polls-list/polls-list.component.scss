@@ -1,0 +1,61 @@
+ion-content{
+    --ion-background-color: #E20074;
+}
+
+.item-disabled{
+    opacity: 0.8 !important;
+}
+
+.title-cmp {
+    font-size: 18px;
+    // color: white;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.no-items{
+    font-style: italic;
+    color: white;
+    text-align: center;
+    width: 250px;
+    margin: auto;
+}
+
+ion-list{
+    width: 90%;
+    margin: auto;
+    background: transparent !important;
+}
+
+ion-item-sliding{
+    margin-bottom: 20px;
+}
+
+.reward{
+    --background: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0px 10px, rgb(0 0 0 / 5%) 0px 3px 0px;
+    // --border-color: yellow;
+    border-radius: 10px;
+    // width: 90%;
+    // margin: auto;
+    // margin-bottom: 20px;
+    color: black !important;
+
+    .title{
+        font-weight: bolder;
+        margin-bottom: 8px;
+    }
+
+    .magentos{
+        text-align: end;
+        margin-left: 15px;
+
+        .magento-icon{
+            font-size: 35px;
+            color: var(--ion-background-color);
+        }
+        p{
+            font-weight: bolder;
+        }
+    }
+}

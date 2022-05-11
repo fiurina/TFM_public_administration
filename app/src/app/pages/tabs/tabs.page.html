@@ -1,0 +1,41 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="primary">
+    
+      <ion-tab-button tab="polls/consumer" *ngIf="authService.userSession.role === Roles.CITIZEN">
+        <ion-icon name="podium-outline"></ion-icon>
+        <ion-label>Encuestas</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="social/consumer" *ngIf="authService.userSession.role === Roles.CITIZEN">
+        <!-- <ion-icon name="help-buoy-outline"></ion-icon> -->
+        <ion-icon name="people-circle-outline"></ion-icon>
+        <ion-label>Ayudas sociales</ion-label>
+      </ion-tab-button>  
+
+      <ion-tab-button tab="profile/consumer" *ngIf="authService.userSession.role === Roles.CITIZEN">
+        <!-- <ion-icon name="help-buoy-outline"></ion-icon> -->
+        <ion-icon name="build-outline"></ion-icon>
+        <ion-label>Perfil usuario</ion-label>
+      </ion-tab-button>  
+    
+      <ion-tab-button tab="polls/administration" *ngIf="authService.userSession.role === Roles.ADMIN">
+        <ion-icon name="podium-outline"></ion-icon>
+        <ion-label>Encuestas</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="social/administration" *ngIf="authService.userSession.role === Roles.ADMIN">
+        <!-- <ion-icon name="help-buoy-outline"></ion-icon> -->
+        <ion-icon name="people-circle-outline"></ion-icon>
+        <ion-label>Ayudas sociales</ion-label>
+      </ion-tab-button>  
+
+      <ion-tab-button tab="profile/administration" *ngIf="authService.userSession.role === Roles.ADMIN">
+        <!-- <ion-icon name="help-buoy-outline"></ion-icon> -->
+        <ion-icon name="build-outline"></ion-icon>
+        <ion-label>Perfil usuario</ion-label>
+      </ion-tab-button>  
+  
+  </ion-tab-bar>
+
+</ion-tabs>

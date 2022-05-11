@@ -1,0 +1,72 @@
+{
+  "name": "public-administration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public administration",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --timeout 10000 --exit",
+    "ganache": "ganache --wallet.seed myCustomSeed",
+    "deploy": "cd ../truffle && truffle compile && truffle migrate && cd ../backend",
+    "start-dev": "NODE_ENV=development nodemon",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "nodemonConfig": {
+    "env": {
+      "INIT_DB": true
+    },
+    "ignore": [
+      "package.json",
+      "README.md",
+      "package-lock.json",
+      "db_init/my.cnf",
+      ".dockerignore",
+      ".gitignore",
+      "DOCKERFILE",
+      "*.yml",
+      "*.sh",
+      "*.sql",
+      "test/"
+    ]
+  },
+  "author": "Gabriel Bové",
+  "license": "",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "chai-http": "^4.0.0",
+    "mocha": "^8.2.1",
+    "mocha-prepare": "^0.1.0",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "base-x": "^4.0.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "1.19.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "date-fns": "^2.17.0",
+    "express": "4.17.1",
+    "express-session": "^1.17.1",
+    "ganache": "^7.0.3",
+    "https": "^1.0.0",
+    "ipfs-http-client": "^56.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "2.29.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "sharp": "0.27.1",
+    "web3": "^1.7.1",
+    "webpack": "^5.21.2",
+    "win-node-env": "^0.6.1",
+    "winston": "^3.3.3",
+    "xml2js": "^0.4.23",
+    "xmlbuilder": "^15.1.1"
+  }
+}

@@ -1,0 +1,7 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <app-polls-list [elements]="polls" [loading]="loading" (selectEmitter)="answerPoll($event)"></app-polls-list>
+  </div>
+</ion-content>

@@ -1,0 +1,1637 @@
+{
+  "contractName": "PublicAdminContract",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract UserContract",
+          "name": "_addrUserContract",
+          "type": "address"
+        },
+        {
+          "internalType": "contract PollContract",
+          "name": "_addrPollContract_ref",
+          "type": "address"
+        },
+        {
+          "internalType": "contract SocialContract",
+          "name": "_addrSocialContract_ref",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract UserContract\",\"name\":\"_addrUserContract\",\"type\":\"address\"},{\"internalType\":\"contract PollContract\",\"name\":\"_addrPollContract_ref\",\"type\":\"address\"},{\"internalType\":\"contract SocialContract\",\"name\":\"_addrSocialContract_ref\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/1_PABase.sol\":\"PublicAdminContract\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/1_PABase.sol\":{\"keccak256\":\"0xceb22f4cd2a0d60e2b6b0bab3f5255bb4110368082239345808a461af04cda18\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://f87bb6055405e86d270050a77fd16a12722688b4c256f2d04fc73bc386bf909e\",\"dweb:/ipfs/QmXTXf53xr2xaibJjbRJr4txjEdqDMS2BcHP3ky7TwYrAt\"]},\"project:/contracts/2_User.sol\":{\"keccak256\":\"0x75d71a749277eca20fa9329a7938c6fe658ee77591be1237bc1cae361d043b70\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://5c365bc1cde067c93fc30cda793ad03d9e5a5597184cb3ced5ee3548bc85be47\",\"dweb:/ipfs/QmeGofvi1FRGuWKPXf11DNVkq4xpziVNtnDL856R7K6fhB\"]},\"project:/contracts/3_Poll.sol\":{\"keccak256\":\"0x130107c44a80816fd838c28e1bdd59bf5c04a866a2fd00aa74e3e48d826dd1a2\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://cb6cafb70b9a8e880835c62fa23195c0aa54c982cad290dee9129cf0bec6eff9\",\"dweb:/ipfs/QmV1S7UbTE4eC6jyb3P6aDbUQvtjwZEa8xySSDoeYMF96M\"]},\"project:/contracts/4_Social.sol\":{\"keccak256\":\"0xe242a2430b3645a00bc266d8a2c2efda1c6e3c003c8ea1beb09212aa7bf24ee3\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://44c6d7245ce5b524d48876546de5cb6fb8a2ce7943113b37d1a584fcb006d701\",\"dweb:/ipfs/QmfXyCUYNKotdU4JymdaGjWRXF7cjFWkFWeFLE6aYfPaxw\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161012c38038061012c83398101604081905261002f91610071565b60008054600160a060020a03948516600160a060020a0319918216179091556001805493851693821693909317909255600280549190931691161790556100d6565b60008060006060848603121561008657600080fd5b8351610091816100be565b60208501519093506100a2816100be565b60408501519092506100b3816100be565b809150509250925092565b600160a060020a03811681146100d357600080fd5b50565b6048806100e46000396000f3fe608060405236600d57600080fd5b600080fdfea2646970667358221220ecacd1f3bf0945cffe7643808422e5da63ae612e87d0ce28b695860f14d7f21064736f6c63430008070033",
+  "deployedBytecode": "0x608060405236600d57600080fd5b600080fdfea2646970667358221220ecacd1f3bf0945cffe7643808422e5da63ae612e87d0ce28b695860f14d7f21064736f6c63430008070033",
+  "immutableReferences": {},
+  "generatedSources": [
+    {
+      "ast": {
+        "nodeType": "YulBlock",
+        "src": "0:790:5",
+        "statements": [
+          {
+            "nodeType": "YulBlock",
+            "src": "6:3:5",
+            "statements": []
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "192:446:5",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "238:16:5",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "247:1:5",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "250:1:5",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "240:6:5"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "240:12:5"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "240:12:5"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "dataEnd",
+                            "nodeType": "YulIdentifier",
+                            "src": "213:7:5"
+                          },
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "222:9:5"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "sub",
+                          "nodeType": "YulIdentifier",
+                          "src": "209:3:5"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "209:23:5"
+                      },
+                      {
+                        "kind": "number",
+                        "nodeType": "YulLiteral",
+                        "src": "234:2:5",
+                        "type": "",
+                        "value": "96"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "slt",
+                      "nodeType": "YulIdentifier",
+                      "src": "205:3:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "205:32:5"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "202:52:5"
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "263:29:5",
+                  "value": {
+                    "arguments": [
+                      {
+                        "name": "headStart",
+                        "nodeType": "YulIdentifier",
+                        "src": "282:9:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "276:5:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "276:16:5"
+                  },
+                  "variables": [
+                    {
+                      "name": "value",
+                      "nodeType": "YulTypedName",
+                      "src": "267:5:5",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value",
+                        "nodeType": "YulIdentifier",
+                        "src": "340:5:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "validator_revert_contract_PollContract",
+                      "nodeType": "YulIdentifier",
+                      "src": "301:38:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "301:45:5"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "301:45:5"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "355:15:5",
+                  "value": {
+                    "name": "value",
+                    "nodeType": "YulIdentifier",
+                    "src": "365:5:5"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value0",
+                      "nodeType": "YulIdentifier",
+                      "src": "355:6:5"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "379:40:5",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "404:9:5"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "415:2:5",
+                            "type": "",
+                            "value": "32"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "400:3:5"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "400:18:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "394:5:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "394:25:5"
+                  },
+                  "variables": [
+                    {
+                      "name": "value_1",
+                      "nodeType": "YulTypedName",
+                      "src": "383:7:5",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value_1",
+                        "nodeType": "YulIdentifier",
+                        "src": "467:7:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "validator_revert_contract_PollContract",
+                      "nodeType": "YulIdentifier",
+                      "src": "428:38:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "428:47:5"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "428:47:5"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "484:17:5",
+                  "value": {
+                    "name": "value_1",
+                    "nodeType": "YulIdentifier",
+                    "src": "494:7:5"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value1",
+                      "nodeType": "YulIdentifier",
+                      "src": "484:6:5"
+                    }
+                  ]
+                },
+                {
+                  "nodeType": "YulVariableDeclaration",
+                  "src": "510:40:5",
+                  "value": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "headStart",
+                            "nodeType": "YulIdentifier",
+                            "src": "535:9:5"
+                          },
+                          {
+                            "kind": "number",
+                            "nodeType": "YulLiteral",
+                            "src": "546:2:5",
+                            "type": "",
+                            "value": "64"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "add",
+                          "nodeType": "YulIdentifier",
+                          "src": "531:3:5"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "531:18:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "mload",
+                      "nodeType": "YulIdentifier",
+                      "src": "525:5:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "525:25:5"
+                  },
+                  "variables": [
+                    {
+                      "name": "value_2",
+                      "nodeType": "YulTypedName",
+                      "src": "514:7:5",
+                      "type": ""
+                    }
+                  ]
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "name": "value_2",
+                        "nodeType": "YulIdentifier",
+                        "src": "598:7:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "validator_revert_contract_PollContract",
+                      "nodeType": "YulIdentifier",
+                      "src": "559:38:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "559:47:5"
+                  },
+                  "nodeType": "YulExpressionStatement",
+                  "src": "559:47:5"
+                },
+                {
+                  "nodeType": "YulAssignment",
+                  "src": "615:17:5",
+                  "value": {
+                    "name": "value_2",
+                    "nodeType": "YulIdentifier",
+                    "src": "625:7:5"
+                  },
+                  "variableNames": [
+                    {
+                      "name": "value2",
+                      "nodeType": "YulIdentifier",
+                      "src": "615:6:5"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "abi_decode_tuple_t_contract$_UserContract_$529t_contract$_PollContract_$887t_contract$_SocialContract_$1455_fromMemory",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "headStart",
+                "nodeType": "YulTypedName",
+                "src": "142:9:5",
+                "type": ""
+              },
+              {
+                "name": "dataEnd",
+                "nodeType": "YulTypedName",
+                "src": "153:7:5",
+                "type": ""
+              }
+            ],
+            "returnVariables": [
+              {
+                "name": "value0",
+                "nodeType": "YulTypedName",
+                "src": "165:6:5",
+                "type": ""
+              },
+              {
+                "name": "value1",
+                "nodeType": "YulTypedName",
+                "src": "173:6:5",
+                "type": ""
+              },
+              {
+                "name": "value2",
+                "nodeType": "YulTypedName",
+                "src": "181:6:5",
+                "type": ""
+              }
+            ],
+            "src": "14:624:5"
+          },
+          {
+            "body": {
+              "nodeType": "YulBlock",
+              "src": "702:86:5",
+              "statements": [
+                {
+                  "body": {
+                    "nodeType": "YulBlock",
+                    "src": "766:16:5",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "775:1:5",
+                              "type": "",
+                              "value": "0"
+                            },
+                            {
+                              "kind": "number",
+                              "nodeType": "YulLiteral",
+                              "src": "778:1:5",
+                              "type": "",
+                              "value": "0"
+                            }
+                          ],
+                          "functionName": {
+                            "name": "revert",
+                            "nodeType": "YulIdentifier",
+                            "src": "768:6:5"
+                          },
+                          "nodeType": "YulFunctionCall",
+                          "src": "768:12:5"
+                        },
+                        "nodeType": "YulExpressionStatement",
+                        "src": "768:12:5"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "name": "value",
+                            "nodeType": "YulIdentifier",
+                            "src": "725:5:5"
+                          },
+                          {
+                            "arguments": [
+                              {
+                                "name": "value",
+                                "nodeType": "YulIdentifier",
+                                "src": "736:5:5"
+                              },
+                              {
+                                "arguments": [
+                                  {
+                                    "arguments": [
+                                      {
+                                        "kind": "number",
+                                        "nodeType": "YulLiteral",
+                                        "src": "751:1:5",
+                                        "type": "",
+                                        "value": "2"
+                                      },
+                                      {
+                                        "kind": "number",
+                                        "nodeType": "YulLiteral",
+                                        "src": "754:3:5",
+                                        "type": "",
+                                        "value": "160"
+                                      }
+                                    ],
+                                    "functionName": {
+                                      "name": "exp",
+                                      "nodeType": "YulIdentifier",
+                                      "src": "747:3:5"
+                                    },
+                                    "nodeType": "YulFunctionCall",
+                                    "src": "747:11:5"
+                                  },
+                                  {
+                                    "kind": "number",
+                                    "nodeType": "YulLiteral",
+                                    "src": "760:1:5",
+                                    "type": "",
+                                    "value": "1"
+                                  }
+                                ],
+                                "functionName": {
+                                  "name": "sub",
+                                  "nodeType": "YulIdentifier",
+                                  "src": "743:3:5"
+                                },
+                                "nodeType": "YulFunctionCall",
+                                "src": "743:19:5"
+                              }
+                            ],
+                            "functionName": {
+                              "name": "and",
+                              "nodeType": "YulIdentifier",
+                              "src": "732:3:5"
+                            },
+                            "nodeType": "YulFunctionCall",
+                            "src": "732:31:5"
+                          }
+                        ],
+                        "functionName": {
+                          "name": "eq",
+                          "nodeType": "YulIdentifier",
+                          "src": "722:2:5"
+                        },
+                        "nodeType": "YulFunctionCall",
+                        "src": "722:42:5"
+                      }
+                    ],
+                    "functionName": {
+                      "name": "iszero",
+                      "nodeType": "YulIdentifier",
+                      "src": "715:6:5"
+                    },
+                    "nodeType": "YulFunctionCall",
+                    "src": "715:50:5"
+                  },
+                  "nodeType": "YulIf",
+                  "src": "712:70:5"
+                }
+              ]
+            },
+            "name": "validator_revert_contract_PollContract",
+            "nodeType": "YulFunctionDefinition",
+            "parameters": [
+              {
+                "name": "value",
+                "nodeType": "YulTypedName",
+                "src": "691:5:5",
+                "type": ""
+              }
+            ],
+            "src": "643:145:5"
+          }
+        ]
+      },
+      "contents": "{\n    { }\n    function abi_decode_tuple_t_contract$_UserContract_$529t_contract$_PollContract_$887t_contract$_SocialContract_$1455_fromMemory(headStart, dataEnd) -> value0, value1, value2\n    {\n        if slt(sub(dataEnd, headStart), 96) { revert(0, 0) }\n        let value := mload(headStart)\n        validator_revert_contract_PollContract(value)\n        value0 := value\n        let value_1 := mload(add(headStart, 32))\n        validator_revert_contract_PollContract(value_1)\n        value1 := value_1\n        let value_2 := mload(add(headStart, 64))\n        validator_revert_contract_PollContract(value_2)\n        value2 := value_2\n    }\n    function validator_revert_contract_PollContract(value)\n    {\n        if iszero(eq(value, and(value, sub(exp(2, 160), 1)))) { revert(0, 0) }\n    }\n}",
+      "id": 5,
+      "language": "Yul",
+      "name": "#utility.yul"
+    }
+  ],
+  "deployedGeneratedSources": [],
+  "sourceMap": "150:524:0:-:0;;;326:281;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;457:16;:36;;-1:-1:-1;;;;;457:36:0;;;-1:-1:-1;;;;;;457:36:0;;;;;;;;504:40;;;;;;;;;;;;;;;555:18;:44;;;;;;;;;;;150:524;;14:624:5;165:6;173;181;234:2;222:9;213:7;209:23;205:32;202:52;;;250:1;247;240:12;202:52;282:9;276:16;301:45;340:5;301:45;:::i;:::-;415:2;400:18;;394:25;365:5;;-1:-1:-1;428:47:5;394:25;428:47;:::i;:::-;546:2;531:18;;525:25;494:7;;-1:-1:-1;559:47:5;525:25;559:47;:::i;:::-;625:7;615:17;;;14:624;;;;;:::o;643:145::-;-1:-1:-1;;;;;732:31:5;;722:42;;712:70;;778:1;775;768:12;712:70;643:145;:::o;:::-;150:524:0;;;;;;",
+  "deployedSourceMap": "150:524:0:-:0;;;;;;653:8;;;150:524;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity >=0.8.0 <0.9.0;\r\n\r\nimport \"./2_User.sol\";\r\nimport \"./3_Poll.sol\";\r\nimport \"./4_Social.sol\";\r\n\r\n\r\ncontract PublicAdminContract {\r\n\r\n    UserContract private userContract_ref;\r\n    PollContract private pollContract_ref;\r\n    SocialContract private socialContract_ref;\r\n\r\n    constructor(UserContract _addrUserContract, PollContract _addrPollContract_ref, SocialContract _addrSocialContract_ref) {\r\n        userContract_ref = _addrUserContract;\r\n        pollContract_ref = _addrPollContract_ref;\r\n        socialContract_ref = _addrSocialContract_ref;\r\n    }\r\n\r\n    receive() external payable {\r\n        revert();\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\34631\\Desktop\\Gabriel\\UOC\\Master Seguretat\\TFM\\DApp\\public-administration\\truffle\\contracts\\1_PABase.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/1_PABase.sol",
+    "exportedSymbols": {
+      "PollContract": [
+        887
+      ],
+      "PublicAdminContract": [
+        46
+      ],
+      "SocialContract": [
+        1455
+      ],
+      "UserContract": [
+        529
+      ]
+    },
+    "id": 47,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:31:0"
+      },
+      {
+        "absolutePath": "project:/contracts/2_User.sol",
+        "file": "./2_User.sol",
+        "id": 2,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 530,
+        "src": "72:22:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/3_Poll.sol",
+        "file": "./3_Poll.sol",
+        "id": 3,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 888,
+        "src": "96:22:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/4_Social.sol",
+        "file": "./4_Social.sol",
+        "id": 4,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 1456,
+        "src": "120:24:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 46,
+        "linearizedBaseContracts": [
+          46
+        ],
+        "name": "PublicAdminContract",
+        "nameLocation": "159:19:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7,
+            "mutability": "mutable",
+            "name": "userContract_ref",
+            "nameLocation": "209:16:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "188:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_UserContract_$529",
+              "typeString": "contract UserContract"
+            },
+            "typeName": {
+              "id": 6,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 5,
+                "name": "UserContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 529,
+                "src": "188:12:0"
+              },
+              "referencedDeclaration": 529,
+              "src": "188:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserContract_$529",
+                "typeString": "contract UserContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "mutability": "mutable",
+            "name": "pollContract_ref",
+            "nameLocation": "253:16:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "232:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_PollContract_$887",
+              "typeString": "contract PollContract"
+            },
+            "typeName": {
+              "id": 9,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 8,
+                "name": "PollContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 887,
+                "src": "232:12:0"
+              },
+              "referencedDeclaration": 887,
+              "src": "232:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PollContract_$887",
+                "typeString": "contract PollContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 13,
+            "mutability": "mutable",
+            "name": "socialContract_ref",
+            "nameLocation": "299:18:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "276:41:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SocialContract_$1455",
+              "typeString": "contract SocialContract"
+            },
+            "typeName": {
+              "id": 12,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 11,
+                "name": "SocialContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1455,
+                "src": "276:14:0"
+              },
+              "referencedDeclaration": 1455,
+              "src": "276:14:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SocialContract_$1455",
+                "typeString": "contract SocialContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "446:161:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 25,
+                      "name": "userContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "457:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UserContract_$529",
+                        "typeString": "contract UserContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 26,
+                      "name": "_addrUserContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "476:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UserContract_$529",
+                        "typeString": "contract UserContract"
+                      }
+                    },
+                    "src": "457:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UserContract_$529",
+                      "typeString": "contract UserContract"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "457:36:0"
+                },
+                {
+                  "expression": {
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 29,
+                      "name": "pollContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "504:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_PollContract_$887",
+                        "typeString": "contract PollContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 30,
+                      "name": "_addrPollContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19,
+                      "src": "523:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_PollContract_$887",
+                        "typeString": "contract PollContract"
+                      }
+                    },
+                    "src": "504:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_PollContract_$887",
+                      "typeString": "contract PollContract"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "504:40:0"
+                },
+                {
+                  "expression": {
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 33,
+                      "name": "socialContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13,
+                      "src": "555:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SocialContract_$1455",
+                        "typeString": "contract SocialContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 34,
+                      "name": "_addrSocialContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22,
+                      "src": "576:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SocialContract_$1455",
+                        "typeString": "contract SocialContract"
+                      }
+                    },
+                    "src": "555:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SocialContract_$1455",
+                      "typeString": "contract SocialContract"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "555:44:0"
+                }
+              ]
+            },
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "mutability": "mutable",
+                  "name": "_addrUserContract",
+                  "nameLocation": "351:17:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "338:30:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_UserContract_$529",
+                    "typeString": "contract UserContract"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14,
+                      "name": "UserContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 529,
+                      "src": "338:12:0"
+                    },
+                    "referencedDeclaration": 529,
+                    "src": "338:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UserContract_$529",
+                      "typeString": "contract UserContract"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "mutability": "mutable",
+                  "name": "_addrPollContract_ref",
+                  "nameLocation": "383:21:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "370:34:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_PollContract_$887",
+                    "typeString": "contract PollContract"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 17,
+                      "name": "PollContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 887,
+                      "src": "370:12:0"
+                    },
+                    "referencedDeclaration": 887,
+                    "src": "370:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_PollContract_$887",
+                      "typeString": "contract PollContract"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22,
+                  "mutability": "mutable",
+                  "name": "_addrSocialContract_ref",
+                  "nameLocation": "421:23:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "406:38:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_SocialContract_$1455",
+                    "typeString": "contract SocialContract"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 20,
+                      "name": "SocialContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1455,
+                      "src": "406:14:0"
+                    },
+                    "referencedDeclaration": 1455,
+                    "src": "406:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SocialContract_$1455",
+                      "typeString": "contract SocialContract"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "337:108:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "446:0:0"
+            },
+            "scope": 46,
+            "src": "326:281:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 44,
+              "nodeType": "Block",
+              "src": "642:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 41,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967277,
+                        4294967277
+                      ],
+                      "referencedDeclaration": 4294967277,
+                      "src": "653:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "653:8:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "ExpressionStatement",
+                  "src": "653:8:0"
+                }
+              ]
+            },
+            "id": 45,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "622:2:0"
+            },
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "642:0:0"
+            },
+            "scope": 46,
+            "src": "615:54:0",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 47,
+        "src": "150:524:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:637:0"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/1_PABase.sol",
+    "exportedSymbols": {
+      "PollContract": [
+        887
+      ],
+      "PublicAdminContract": [
+        46
+      ],
+      "SocialContract": [
+        1455
+      ],
+      "UserContract": [
+        529
+      ]
+    },
+    "id": 47,
+    "license": "GPL-3.0",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:31:0"
+      },
+      {
+        "absolutePath": "project:/contracts/2_User.sol",
+        "file": "./2_User.sol",
+        "id": 2,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 530,
+        "src": "72:22:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/3_Poll.sol",
+        "file": "./3_Poll.sol",
+        "id": 3,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 888,
+        "src": "96:22:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/4_Social.sol",
+        "file": "./4_Social.sol",
+        "id": 4,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 47,
+        "sourceUnit": 1456,
+        "src": "120:24:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 46,
+        "linearizedBaseContracts": [
+          46
+        ],
+        "name": "PublicAdminContract",
+        "nameLocation": "159:19:0",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7,
+            "mutability": "mutable",
+            "name": "userContract_ref",
+            "nameLocation": "209:16:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "188:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_UserContract_$529",
+              "typeString": "contract UserContract"
+            },
+            "typeName": {
+              "id": 6,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 5,
+                "name": "UserContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 529,
+                "src": "188:12:0"
+              },
+              "referencedDeclaration": 529,
+              "src": "188:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UserContract_$529",
+                "typeString": "contract UserContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "mutability": "mutable",
+            "name": "pollContract_ref",
+            "nameLocation": "253:16:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "232:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_PollContract_$887",
+              "typeString": "contract PollContract"
+            },
+            "typeName": {
+              "id": 9,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 8,
+                "name": "PollContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 887,
+                "src": "232:12:0"
+              },
+              "referencedDeclaration": 887,
+              "src": "232:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PollContract_$887",
+                "typeString": "contract PollContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 13,
+            "mutability": "mutable",
+            "name": "socialContract_ref",
+            "nameLocation": "299:18:0",
+            "nodeType": "VariableDeclaration",
+            "scope": 46,
+            "src": "276:41:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SocialContract_$1455",
+              "typeString": "contract SocialContract"
+            },
+            "typeName": {
+              "id": 12,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 11,
+                "name": "SocialContract",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1455,
+                "src": "276:14:0"
+              },
+              "referencedDeclaration": 1455,
+              "src": "276:14:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SocialContract_$1455",
+                "typeString": "contract SocialContract"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 37,
+              "nodeType": "Block",
+              "src": "446:161:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 27,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 25,
+                      "name": "userContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "457:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UserContract_$529",
+                        "typeString": "contract UserContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 26,
+                      "name": "_addrUserContract",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "476:17:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_UserContract_$529",
+                        "typeString": "contract UserContract"
+                      }
+                    },
+                    "src": "457:36:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UserContract_$529",
+                      "typeString": "contract UserContract"
+                    }
+                  },
+                  "id": 28,
+                  "nodeType": "ExpressionStatement",
+                  "src": "457:36:0"
+                },
+                {
+                  "expression": {
+                    "id": 31,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 29,
+                      "name": "pollContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "504:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_PollContract_$887",
+                        "typeString": "contract PollContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 30,
+                      "name": "_addrPollContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19,
+                      "src": "523:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_PollContract_$887",
+                        "typeString": "contract PollContract"
+                      }
+                    },
+                    "src": "504:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_PollContract_$887",
+                      "typeString": "contract PollContract"
+                    }
+                  },
+                  "id": 32,
+                  "nodeType": "ExpressionStatement",
+                  "src": "504:40:0"
+                },
+                {
+                  "expression": {
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 33,
+                      "name": "socialContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13,
+                      "src": "555:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SocialContract_$1455",
+                        "typeString": "contract SocialContract"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 34,
+                      "name": "_addrSocialContract_ref",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 22,
+                      "src": "576:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SocialContract_$1455",
+                        "typeString": "contract SocialContract"
+                      }
+                    },
+                    "src": "555:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SocialContract_$1455",
+                      "typeString": "contract SocialContract"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "555:44:0"
+                }
+              ]
+            },
+            "id": 38,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16,
+                  "mutability": "mutable",
+                  "name": "_addrUserContract",
+                  "nameLocation": "351:17:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "338:30:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_UserContract_$529",
+                    "typeString": "contract UserContract"
+                  },
+                  "typeName": {
+                    "id": 15,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14,
+                      "name": "UserContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 529,
+                      "src": "338:12:0"
+                    },
+                    "referencedDeclaration": 529,
+                    "src": "338:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UserContract_$529",
+                      "typeString": "contract UserContract"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "mutability": "mutable",
+                  "name": "_addrPollContract_ref",
+                  "nameLocation": "383:21:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "370:34:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_PollContract_$887",
+                    "typeString": "contract PollContract"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 17,
+                      "name": "PollContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 887,
+                      "src": "370:12:0"
+                    },
+                    "referencedDeclaration": 887,
+                    "src": "370:12:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_PollContract_$887",
+                      "typeString": "contract PollContract"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 22,
+                  "mutability": "mutable",
+                  "name": "_addrSocialContract_ref",
+                  "nameLocation": "421:23:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 38,
+                  "src": "406:38:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_SocialContract_$1455",
+                    "typeString": "contract SocialContract"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 20,
+                      "name": "SocialContract",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1455,
+                      "src": "406:14:0"
+                    },
+                    "referencedDeclaration": 1455,
+                    "src": "406:14:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SocialContract_$1455",
+                      "typeString": "contract SocialContract"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "337:108:0"
+            },
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "446:0:0"
+            },
+            "scope": 46,
+            "src": "326:281:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 44,
+              "nodeType": "Block",
+              "src": "642:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 41,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967277,
+                        4294967277
+                      ],
+                      "referencedDeclaration": 4294967277,
+                      "src": "653:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$__$returns$__$",
+                        "typeString": "function () pure"
+                      }
+                    },
+                    "id": 42,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "653:8:0",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 43,
+                  "nodeType": "ExpressionStatement",
+                  "src": "653:8:0"
+                }
+              ]
+            },
+            "id": 45,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "622:2:0"
+            },
+            "returnParameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "642:0:0"
+            },
+            "scope": 46,
+            "src": "615:54:0",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 47,
+        "src": "150:524:0",
+        "usedErrors": []
+      }
+    ],
+    "src": "37:637:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {
+    "1652255959442": {
+      "events": {},
+      "links": {},
+      "address": "0x50e7D57bB32fE6B98783591d113722988A7AD5c8",
+      "transactionHash": "0x233eab32ef6c13f37cece23ded44714ec75eb987e6062b05721fb68d06146674"
+    }
+  },
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-05-11T08:48:26.701Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

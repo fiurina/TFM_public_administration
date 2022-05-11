@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <p class="text-22">{{social?.title}}</p>
+    <!-- <p class="text-14 date">{{poll?.creationDate}}</p> -->
+    <p class="text-16 text-italic description">{{social?.description}}</p>
+    <img class="poll-image" [src]="environment.IPFS_URL+social?.imageURL">
+    <p class="text-22 text-italic">{{social?.tokens}}</p>
+    
+    <div *ngIf="social?.condition.condition_type === socialTypesEnum.GENDER">
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === 'F'">Gender: Femenine</p>
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === 'M'">Gender: Masculine</p>
+    </div>
+    <div *ngIf="social?.condition.condition_type === socialTypesEnum.SALARY">
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === '0'">Sin salario</p>
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === '5'">Hasta 5 ETH</p>
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === '10'">Hasta 10 ETH</p>
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === '15'">Hasta 15 ETH</p>
+      <p class="text-22 text-italic" *ngIf="social?.condition.param === '100'">Más de 15 ETH</p>
+    </div>
+    <div *ngIf="social?.condition.condition_type === socialTypesEnum.AGE">
+      <p class="text-22 text-italic">Age between {{social?.condition.minRange}} y {{social?.condition.minRange}}</p>
+    </div>
+
+  </div>
+
+</ion-content>
+
+

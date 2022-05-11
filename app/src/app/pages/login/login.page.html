@@ -1,0 +1,26 @@
+
+<ion-content>
+
+  <div class="login-wrapper">
+    <ion-img class="logo" src="/assets/images/administration.png"></ion-img>
+
+    <ng-container>
+      <p class="text-22">Seleccione una wallet con la que iniciar sesión</p>
+      <ion-select class="login-item" [disabled]="loading || !localWallets || localWallets.length<=0" [(ngModel)]="wallet">
+        <ion-select-option *ngFor="let wallet of localWallets" [value]="wallet">{{wallet.name}}</ion-select-option>
+      </ion-select>
+      <div *ngIf="wallet">
+        <p class="text-12">{{wallet.account}}</p>
+        <p class="text-18">{{(wallet.balance/10000000000000000000).toFixed(4)}} ETH</p>
+      </div>
+
+      <ion-button class="big-icon-button button-margin" [disabled]="!wallet || loading" (click)="login()" expand="block">
+        <p>Acceder</p>
+        <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+      </ion-button>
+
+      <a class="register-link" (click)="loadRegister()">Registrar usuario</a>
+    </ng-container>
+
+  </div>
+</ion-content>

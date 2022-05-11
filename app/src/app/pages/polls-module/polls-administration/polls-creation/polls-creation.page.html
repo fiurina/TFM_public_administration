@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input type="string" [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input type="string" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Imagen URL</ion-label>
+      <input type="file" size="3" (change)="handleImage($event.target.files)">
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Question</ion-label>
+      <ion-input type="string" [(ngModel)]="question"></ion-input>
+    </ion-item>
+
+    <div>
+      <ion-item class="input-item" [disabled]="loading">
+        <ion-label position="stacked">Num. Answers</ion-label>
+        <ion-input type="number" [(ngModel)]="numAnswers" (ngModelChange)="changeAnswers()"></ion-input>
+      </ion-item>
+      <div *ngFor="let answer of numAnswersArray; let index = index">
+        <ion-item class="input-item" [disabled]="loading">
+          <ion-label position="stacked">Answer {{index +1}}</ion-label>
+          <ion-input type="string" [(ngModel)]="answers['answer'+index] "></ion-input>
+        </ion-item>
+      </div>
+    </div>
+
+    <ion-button class="big-icon-button button-margin" [disabled]="!title || !description || !question || loading" (click)="createPoll()" expand="block">
+      <p *ngIf="!edit">Create Poll</p>
+      <p *ngIf="edit">Edit Poll</p>
+      <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+    </ion-button>
+  </div>
+
+</ion-content>
+

@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <p class="text-22">{{poll?.title}}</p>
+    <!-- <p class="text-14 date">{{poll?.creationDate}}</p> -->
+    <p class="text-16 text-italic description">{{poll?.description}}</p>
+    <img class="poll-image" [src]="environment.IPFS_URL+poll?.imageURL">
+    <p class="text-22 text-italic">{{poll?.question}}</p>
+    
+    <ion-radio-group>
+      <!-- <ion-list-header>
+        <ion-label>Answers</ion-label>
+      </ion-list-header> -->
+  
+      <ion-item *ngFor="let answer of poll?.answerOptions; let index = index">
+        <ion-label>{{answer}}</ion-label>
+        <ion-radio slot="start" [value]="index" (ionFocus)="setAnswer(index)"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-button class="big-icon-button button-margin" [disabled]="disabledButton()" expand="block" (click)="answerPoll()">
+      <p>Answer Poll</p>
+      <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+    </ion-button>
+  </div>
+
+</ion-content>
+
+

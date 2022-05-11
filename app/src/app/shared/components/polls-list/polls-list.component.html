@@ -1,0 +1,52 @@
+<div class="list-container">
+
+  <p class="title-cmp">Polls available</p>
+
+  <ng-container *ngIf="loading; else data">
+    <ion-list>
+      <ion-item-sliding [disabled]="true" *ngFor="let i of array(5)">
+        <ion-item class="reward">
+          <ion-label>
+            <p><ion-skeleton-text animated style="width: 70%; height: 15px;"></ion-skeleton-text></p>
+            <p><ion-skeleton-text animated style="width: 90%; height: 30px;"></ion-skeleton-text></p>
+          </ion-label>
+          <ion-thumbnail slot="end" [style.height.px]="60" [style.width.px]="60">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ng-container>
+
+  <ng-template #data>
+
+    <ion-list>
+      <ion-item-sliding [disabled]="!drag" *ngFor="let item of elements; let i = index">
+        <ion-item-options>
+          <ion-item-option color="primary" (click)="deleteElement(item)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        <ion-item class="reward" button (click)="selectItem(item)">
+          <ion-thumbnail slot="start">
+            <img class="poll-image" [src]="environment.IPFS_URL+item?.imageURL">
+          </ion-thumbnail>
+          <ion-label class="text-wrap">
+            <p class="title ion-text-wrap text-18">{{item.title}}</p>
+            <p class="description text-16">{{item.description}}</p>
+          </ion-label>
+          <ion-label class="magentos" slot="end">
+            <p class="description text-16">{{dateToString(item.creationDate)}}</p>
+            <!-- <ion-icon class="magento-icon" name="star-half-outline"></ion-icon>
+            <p class="text-16">x{{item.points}}</p> -->
+          </ion-label>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ng-template>
+
+  <div *ngIf="elements.length === 0 && !loading" class="no-items">
+      No polls available at this moment.
+  </div>
+
+</div>

@@ -1,0 +1,88 @@
+<ion-content>
+
+  <div class="header">
+    <a class="register-link" (click)="changeType('citizen')">Ciudadano</a>
+    <a class="register-link" (click)="changeType('admin')">Administrador</a>
+  </div>
+
+  <div class="login-wrapper">
+    <!-- <ion-img class="logo" src="/assets/images/administration.png"></ion-img> -->
+
+    <p class="text-22">Seleccione una wallet con la que crear cuenta</p>
+    <ion-select class="login-item" [disabled]="loading || !localWallets || localWallets.length<=0" [(ngModel)]="wallet">
+      <ion-select-option *ngFor="let wallet of localWallets" [value]="wallet">{{wallet.name}}</ion-select-option>
+    </ion-select>
+    <div *ngIf="wallet">
+      <p class="text-12">{{wallet.account}}</p>
+      <p class="text-18">{{(wallet.balance/10000000000000000000).toFixed(4)}} ETH</p>
+    </div>
+
+    <ng-container *ngIf="type==='citizen'">
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">Nombre ciudadano</ion-label>
+        <ion-input type="string" [(ngModel)]="name"></ion-input>
+      </ion-item>
+  
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">Apellidos</ion-label>
+        <ion-input type="string" [(ngModel)]="surname"></ion-input>
+      </ion-item>
+  
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">DNI</ion-label>
+        <ion-input type="string" [(ngModel)]="dni"></ion-input>
+      </ion-item>
+
+      <div style="display: flex;">
+        <ion-item class="login-item" style="flex: 1;" [disabled]="loading">
+          <ion-label position="stacked">Gender</ion-label>
+          <ion-select [(ngModel)]="gender">
+            <ion-select-option [value]="'F'">Femenino</ion-select-option>
+            <ion-select-option [value]="'M'">Masculino</ion-select-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item class="login-item" style="flex: 1;" [disabled]="loading">
+          <ion-label position="stacked">Age</ion-label>
+          <ion-input type="number" [(ngModel)]="age"></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">Salary Range Y</ion-label>
+        <ion-select [(ngModel)]="salary">
+          <ion-select-option [value]="'0'">Sin salario</ion-select-option>
+          <ion-select-option [value]="'5'">Hasta 5 ETH</ion-select-option>
+          <ion-select-option [value]="'10'">Hasta 10 ETH</ion-select-option>
+          <ion-select-option [value]="'15'">Hasta 15 ETH</ion-select-option>
+          <ion-select-option [value]="'15+'">Más de 15 ETH</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ng-container>
+    <ng-container *ngIf="type==='admin'">
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input type="string" [(ngModel)]="name"></ion-input>
+      </ion-item>
+  
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">Apellidos</ion-label>
+        <ion-input type="string" [(ngModel)]="surname"></ion-input>
+      </ion-item>
+  
+      <ion-item class="login-item" [disabled]="loading">
+        <ion-label position="stacked">DNI</ion-label>
+        <ion-input type="string" [(ngModel)]="dni"></ion-input>
+      </ion-item>
+    </ng-container>
+
+    <!-- TODO: Add email validation to accept only correct emails -->
+    <ion-button class="big-icon-button button-margin" [disabled]="!name || !surname || !dni || loading || !wallet" (click)="register()" expand="block">
+      <p>Registrar</p>
+      <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+    </ion-button>
+
+    <a class="register-link" (click)="loadLogin()">Login con cuenta existente</a>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <p class="text-22">{{results?.title}}</p>
+    <p class="text-14 date">{{results?.creationDate}}</p>
+    <p class="text-16 text-italic description">{{results?.description}}</p>
+    <img class="poll-image" [src]="environment.IPFS_URL+results?.imageURL">
+    <p class="text-22 text-italic">{{results?.question}}</p>
+    <div >
+      <p class="text-18 answers" *ngFor="let answer of results?.answerOptions; let index = index">
+        <b>{{results?.results[index]}}</b> - {{answer}}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+          [data]="doughnutChartData"
+  
+          [type]="doughnutChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+

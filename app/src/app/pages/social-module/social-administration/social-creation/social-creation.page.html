@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input type="string" [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input type="string" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Cantidad Tokens</ion-label>
+      <ion-input type="number" [(ngModel)]="tokens"></ion-input>
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Imagen URL</ion-label>
+      <input type="file" size="3" (change)="handleImage($event.target.files)">
+    </ion-item>
+    <ion-item class="input-item" [disabled]="loading">
+      <ion-label position="stacked">Tipo de condición</ion-label>
+      <ion-select class="login-item" [disabled]="loading" [(ngModel)]="conditionType" (ngModelChange)="conditionChanged()">
+        <ion-select-option *ngFor="let type of conditionTypes" [value]="type.value">{{type.key}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="input-item" [disabled]="loading" *ngIf="conditionType === socialTypesEnum.GENDER">
+      <ion-label position="stacked">Gender</ion-label>
+      <ion-select [(ngModel)]="param">
+        <ion-select-option [value]="'F'">Femenino</ion-select-option>
+        <ion-select-option [value]="'M'">Masculino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="input-item" [disabled]="loading" *ngIf="conditionType === socialTypesEnum.SALARY">
+      <ion-label position="stacked">Salary Range Y</ion-label>
+      <ion-select [(ngModel)]="param">
+        <ion-select-option [value]="'0'">Sin salario</ion-select-option>
+        <ion-select-option [value]="'5'">Hasta 5 ETH</ion-select-option>
+        <ion-select-option [value]="'10'">Hasta 10 ETH</ion-select-option>
+        <ion-select-option [value]="'15'">Hasta 15 ETH</ion-select-option>
+        <ion-select-option [value]="'15+'">Más de 15 ETH</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ng-container *ngIf="conditionType === socialTypesEnum.AGE">
+      <ion-item class="input-item" [disabled]="loading">
+        <ion-label position="stacked">Min Age</ion-label>
+        <ion-input type="number" [(ngModel)]="minRange"></ion-input>
+      </ion-item>
+      <ion-item class="input-item" [disabled]="loading">
+        <ion-label position="stacked">Max Age</ion-label>
+        <ion-input type="number" [(ngModel)]="maxRange"></ion-input>
+      </ion-item>
+    </ng-container>
+
+    <ion-button class="big-icon-button button-margin" [disabled]="checkDisabled()" (click)="createSocial()" expand="block">
+      <p>Create Social</p>
+      <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+    </ion-button>
+  </div>
+
+</ion-content>
+

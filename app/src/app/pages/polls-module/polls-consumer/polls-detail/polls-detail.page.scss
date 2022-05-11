@@ -1,0 +1,54 @@
+
+.wrapper {
+    width: 80%;
+    text-align: center;
+    color: black; 
+    margin: auto;
+}
+
+.date{
+    text-align: end;
+}
+
+.description{
+    text-align: justify;
+}
+
+.poll-image{
+    border-radius: 10px;
+}
+
+.answers {
+    text-align: start;
+}
+
+.button-margin {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.big-icon-button {
+  --background: var(--ion-color-primary);;
+  color: white;
+  border-radius: 5px !important;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  height: 60px;
+
+  ion-spinner{
+      color: var(--ion-color-primary);
+      position: absolute;
+      right: 0;
+  }
+
+  ion-icon{
+      color: var(--ion-color-primary);
+      position: absolute;
+      right: 0;
+  }
+
+  p{
+      color: white;       
+  }
+}

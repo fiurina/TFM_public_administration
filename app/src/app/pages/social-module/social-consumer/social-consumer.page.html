@@ -1,0 +1,7 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <app-social-list [elements]="socials" [loading]="loading" (selectEmitter)="viewResults($event)"></app-social-list>
+  </div>
+</ion-content>

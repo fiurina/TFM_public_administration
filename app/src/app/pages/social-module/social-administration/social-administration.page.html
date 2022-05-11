@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="wrapper">
+    <div class="balance">
+      <p>Balance del contrato {{(contractBalance/10000000000000000000).toFixed(4)}} ETH</p>
+
+      <ion-item class="input-item" [disabled]="loading">
+        <ion-label position="stacked">Cantidad a ingresar (ETH)</ion-label>
+        <ion-input type="number" [(ngModel)]="addTokens"></ion-input>
+      </ion-item>
+      <ion-button class="big-icon-button button-margin" [disabled]="!addTokens || loading" (click)="sendTokens()" expand="block">
+        <p>Send</p>
+        <ion-spinner name="crescent" *ngIf="loading"></ion-spinner>
+      </ion-button>
+    </div>
+
+    <app-social-list [elements]="socials" [loading]="loading" [drag]="true" (selectEmitter)="viewDetail($event)" (deleteEmitter)="deleteElement($event)"></app-social-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" edge slot="fixed">
+    <ion-fab-button (click)="openSocialCreation()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
