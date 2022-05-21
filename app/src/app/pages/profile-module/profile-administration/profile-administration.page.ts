@@ -46,7 +46,7 @@ export class ProfileAdministrationPage implements OnInit {
       this.balance = user.balance;
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al cargar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al cargar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -66,7 +66,7 @@ export class ProfileAdministrationPage implements OnInit {
       await this.profileService.saveAdminUser(this.name,this.surname, this.dni).toPromise();
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al guardar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al guardar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -80,7 +80,7 @@ export class ProfileAdministrationPage implements OnInit {
       this.loading = false;
       await this.logout();
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al eliminar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al eliminar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

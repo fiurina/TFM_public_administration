@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
       console.log("Local wallets ", this.localWallets);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Wallets no disponibles', 'Error al cargar las wallets en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Wallets no disponibles', 'Error al cargar las wallets en la blockchain local.\n'+error?.error?.message);
       console.log("Error", error);
       this.loading = false;
     }
@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
       this.loading = false;
       this.router.navigateByUrl(RouterConstants.TABS, { replaceUrl: true });
     } catch (error) {
-      await this.alertService.showErrorAlert('Login incorrecto', 'Error en el proceso de login del usuario.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Login incorrecto', 'Error en el proceso de login del usuario.\n'+error?.error?.message);
       await this.authService.removeSession();
       console.log("Error Login", error);
       this.loading = false;

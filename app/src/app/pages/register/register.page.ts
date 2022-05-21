@@ -46,7 +46,7 @@ export class RegisterPage implements OnInit {
       if(history.state.selectedAccount) { this.wallet = this.localWallets.find(x=> x.account === history.state.selectedAccount.account); }
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Wallets no disponibles', 'Error al cargar las wallets en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Wallets no disponibles', 'Error al cargar las wallets en la blockchain local.\n'+error?.error?.message);
       console.log("Error", error);
       this.loading = false;
     }
@@ -73,7 +73,7 @@ export class RegisterPage implements OnInit {
       this.router.navigateByUrl(RouterConstants.TABS, { replaceUrl: true });
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Registro incorrecto', 'Error en el proceso de registro del usuario.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Registro incorrecto', 'Error en el proceso de registro del usuario.\n'+error?.error?.message);
       console.log("Error", error);
       this.loading = false;
     }
@@ -92,7 +92,7 @@ export class RegisterPage implements OnInit {
         this.loading = false;
         resolve(true);
       } catch (error) {
-        await this.alertService.showErrorAlert('Login incorrecto', 'Error en el proceso de login del usuario.\n'+error.error.message);
+        await this.alertService.showErrorAlert('Login incorrecto', 'Error en el proceso de login del usuario.\n'+error?.error?.message);
         await this.authService.removeSession();
         console.log("Error Login", error);
         this.loading = false;

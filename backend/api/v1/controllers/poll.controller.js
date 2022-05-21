@@ -10,7 +10,7 @@ async function createPollCall(req, res){
         let title = req.body.title;
         let description = req.body.description;
         let creationDate = new Date().getTime();
-        let imageURL = req.body.imageURL;
+        let imageURL = (req.body.imageURL) ? req.body.imageURL : '';
         let question = req.body.question;
         let answers = JSON.parse(req.body.answers);
         let params = [title, description, creationDate, imageURL, question, answers];

@@ -36,7 +36,7 @@ export class SocialConsumerPage implements OnInit {
       console.log('AllSocial ', this.socials);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

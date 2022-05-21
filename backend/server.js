@@ -95,7 +95,7 @@ app.on('db_ready', async function () {
 });
 
 app.on('ready', async function () {
-  // await initData();
+  await initData();
 });
 
 module.exports = app;

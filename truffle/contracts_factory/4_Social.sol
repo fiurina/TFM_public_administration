@@ -102,7 +102,7 @@ contract SocialContract {
         require(socialAidAssignations[index].asignations[msg.sender].conditionsReached == true,"The SocialAid is not assigned to this user");
         require(socialAidAssignations[index].asignations[msg.sender].recieved == false,"The SocialAid has already been recieved to this user");
 
-        (bool success, ) = msg.sender.call{value: socialAids[index].tokens*10000000000000000000}("");
+        (bool success, ) = msg.sender.call{value: socialAids[index].tokens}("");
         require(success, "Transfer failed.");   
         socialAidAssignations[index].asignations[msg.sender].recieved = true;
         return true;

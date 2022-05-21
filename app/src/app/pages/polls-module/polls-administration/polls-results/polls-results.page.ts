@@ -56,7 +56,7 @@ export class PollsResultsPage implements OnInit {
         this.loading = false;
         resolve(true);
       } catch (error) {
-        await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+        await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
         this.loading = false;
         console.log(error);
         reject(error);

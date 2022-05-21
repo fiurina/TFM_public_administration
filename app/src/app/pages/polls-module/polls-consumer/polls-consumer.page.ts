@@ -39,7 +39,7 @@ export class PollsConsumerPage implements OnInit {
       console.log('AllPolls ', this.polls);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -52,7 +52,7 @@ export class PollsConsumerPage implements OnInit {
       console.log('TotalPolls: ', totalPolls);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

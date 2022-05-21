@@ -58,14 +58,16 @@ export class PollsCreationPage implements OnInit {
       console.log(this.answers);
       this.mapAnswers();
       console.log('Image', this.image, typeof this.image);
-      this.imageURL = (await this.pollAdministration.uploadImageIPFS(this.image).toPromise()).imageURL.path;
+      if(this.image){
+        this.imageURL = (await this.pollAdministration.uploadImageIPFS(this.image).toPromise()).imageURL.path;
+      }
       console.log('Image uploaded', this.imageURL);
       let poll = await this.pollAdministration.createPoll(this.title, this.description, this.imageURL, this.question, this.numAnswersArray).toPromise();
       console.log('Create poll: ', poll);
       this.loading = false;
       this.router.navigateByUrl(RouterConstants.POLLS_ADMINISTRATION, {replaceUrl: true});
     } catch (error) {
-      await this.alertService.showErrorAlert('Creación incorrecta de la Encuesta', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Creación incorrecta de la Encuesta', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

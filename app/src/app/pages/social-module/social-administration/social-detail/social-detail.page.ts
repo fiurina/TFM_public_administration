@@ -49,7 +49,7 @@ export class SocialDetailPage implements OnInit {
         this.loading = false;
         resolve(social);
       } catch (error) {
-        await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+        await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
         this.loading = false;
         reject(error);
       }

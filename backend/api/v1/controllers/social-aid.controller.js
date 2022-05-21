@@ -10,7 +10,7 @@ async function createSocialAid(req, res){
         let description = req.body.description;
         let creationDate = new Date().getTime();
         let tokens = parseInt(req.body.tokens);
-        let imageURL = req.body.imageURL;
+        let imageURL = (req.body.imageURL) ? req.body.imageURL : '';
         let conditionType = parseInt(req.body.conditionType);
         let minRange = parseInt(req.body.minRange);
         let maxRange = parseInt(req.body.maxRange);

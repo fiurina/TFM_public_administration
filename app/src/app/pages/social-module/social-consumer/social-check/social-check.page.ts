@@ -51,7 +51,7 @@ export class SocialCheckPage implements OnInit {
         this.loading = false;
         resolve(social);
       } catch (error) {
-        await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+        await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
         this.loading = false;
         reject(error);
       }
@@ -70,7 +70,7 @@ export class SocialCheckPage implements OnInit {
       console.log('checkSocial ', validated);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -83,7 +83,7 @@ export class SocialCheckPage implements OnInit {
       console.log('recieveSocial ', answer);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

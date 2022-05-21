@@ -49,6 +49,7 @@ async function loadContracts(){
 
 function getContracts(networkId){
     let jsonFiles = ['PublicAdminContract', 'UserContract', 'PollContract', 'SocialContract'];
+    // let jsonFiles = ['PublicAdminFactory'];
     let meta = {};
     let contractAddress = {};
     jsonFiles.forEach(file => {

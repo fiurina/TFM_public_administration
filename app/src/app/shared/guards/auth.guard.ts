@@ -25,9 +25,8 @@ export class AuthGuard implements CanActivate {
 
   authorizeRoleRoute(currentRole, authorizedRoles){
     let authorized = false;
-    if(authorizedRoles.length > 0){
-      if(authorizedRoles.includes(currentRole)){ 
-        authorized = true; }
+    if(authorizedRoles.length > 0 && authorizedRoles.includes(currentRole)){
+      authorized = true;
     }
     return authorized;
   }

@@ -43,7 +43,7 @@ export class ErrorHandlerService {
           text = "Error en la operación del servidor";
           break;
         case 525:
-          text = error.error.message;
+          text = error?.error?.message;
           break;
         default:
           text = 'Error en la petición';

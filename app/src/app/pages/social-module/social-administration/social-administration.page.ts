@@ -44,7 +44,7 @@ export class SocialAdministrationPage implements OnInit {
       console.log('AllSocial ', this.socials);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -57,7 +57,7 @@ export class SocialAdministrationPage implements OnInit {
       console.log('TotalSocial: ', totalSocial);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Ayudas no disponibles', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -71,7 +71,7 @@ export class SocialAdministrationPage implements OnInit {
       this.loading = false;
       this.getAllSocialAids();
     } catch (error) {
-      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -88,7 +88,7 @@ export class SocialAdministrationPage implements OnInit {
       this.loading = false;
       this.getContractBalance();
     } catch (error) {
-      await this.alertService.showErrorAlert('Balance no disponible', 'Error al cargar el balance del contrato.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Balance no disponible', 'Error al cargar el balance del contrato.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -101,7 +101,7 @@ export class SocialAdministrationPage implements OnInit {
       console.log('Balance', this.contractBalance, typeof this.contractBalance)
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Balance no disponible', 'Error al cargar el balance del contrato.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Balance no disponible', 'Error al cargar el balance del contrato.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

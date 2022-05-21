@@ -49,14 +49,16 @@ export class SocialCreationPage implements OnInit {
     try {
       this.loading = true;
       console.log('Image', this.image, typeof this.image);
-      this.imageURL = (await this.socialAdministration.uploadImageIPFS(this.image).toPromise()).imageURL.path;
+      if(this.image){
+        this.imageURL = (await this.socialAdministration.uploadImageIPFS(this.image).toPromise()).imageURL.path;
+      }
       console.log('Image uploaded', this.imageURL);
       let social = await this.socialAdministration.createSocialAid(this.title, this.description, this.tokens, this.imageURL, this.conditionType, this.minRange, this.maxRange, this.param).toPromise();
       console.log('Create social: ', social);
       this.loading = false;
       this.router.navigateByUrl(RouterConstants.SOCIAL_ADMINISTRATION, {replaceUrl: true});
     } catch (error) {
-      await this.alertService.showErrorAlert('Creación incorrecta de la Ayuda', 'Error al cargar las ayudas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Creación incorrecta de la Ayuda', 'Error al cargar las ayudas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

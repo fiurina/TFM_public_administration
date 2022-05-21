@@ -53,7 +53,7 @@ export class ProfileConsumerPage implements OnInit {
       this.balance = user.balance;
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al cargar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al cargar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -74,7 +74,7 @@ export class ProfileConsumerPage implements OnInit {
       await this.profileService.saveCitizenUser(this.name,this.surname, this.dni, socialParams).toPromise();
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al guardar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al guardar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
@@ -88,7 +88,7 @@ export class ProfileConsumerPage implements OnInit {
       this.loading = false;
       await this.logout();
     } catch (error) {
-      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al eliminar el usuario en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Usuario no disponible', 'Error al eliminar el usuario en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }

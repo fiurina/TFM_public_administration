@@ -51,7 +51,7 @@ export class PollsDetailPage implements OnInit {
         this.loading = false;
         resolve(poll);
       } catch (error) {
-        await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error.error.message);
+        await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al cargar las encuestas en la blockchain local.\n'+error?.error?.message);
         this.loading = false;
         reject(error);
       }
@@ -74,7 +74,7 @@ export class PollsDetailPage implements OnInit {
       console.log('AnswerPoll ', answer);
       this.loading = false;
     } catch (error) {
-      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al responder la encuestas en la blockchain local.\n'+error.error.message);
+      await this.alertService.showErrorAlert('Encuestas no disponibles', 'Error al responder la encuestas en la blockchain local.\n'+error?.error?.message);
       console.log(error);
       this.loading = false;
     }
